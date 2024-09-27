@@ -1,0 +1,4194 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "productModel",
+        "type": "ContentType",
+        "createdAt": "2024-09-19T17:15:15.871Z",
+        "updatedAt": "2024-09-26T18:32:24.013Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 11,
+        "publishedAt": "2024-09-26T18:32:24.013Z",
+        "firstPublishedAt": "2024-09-19T17:15:16.457Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/content_types/productModel"
+      },
+      "displayField": "name",
+      "name": "Product Model",
+      "description": "Product Model",
+      "fields": [
+        {
+          "id": "id",
+          "name": "id",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript"
+              ],
+              "message": "Only bold, italic, underline, code, and superscript marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline",
+                "table"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, link to Url, link to entry, link to asset, inline entry, and table nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "productImage",
+          "name": "Product Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "category",
+          "name": "Category",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "homeModel",
+        "type": "ContentType",
+        "createdAt": "2024-09-19T17:19:26.941Z",
+        "updatedAt": "2024-09-19T17:19:27.525Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-09-19T17:19:27.525Z",
+        "firstPublishedAt": "2024-09-19T17:19:27.525Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/content_types/homeModel"
+      },
+      "displayField": null,
+      "name": "Home Model",
+      "description": "Home Model",
+      "fields": [
+        {
+          "id": "bannerImage",
+          "name": "Banner Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "newProducts",
+          "name": "New Products",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "productContent",
+          "name": "Product Content",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "headerModel",
+        "type": "ContentType",
+        "createdAt": "2024-09-21T15:05:54.681Z",
+        "updatedAt": "2024-09-26T16:57:08.206Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 15,
+        "publishedAt": "2024-09-26T16:57:08.206Z",
+        "firstPublishedAt": "2024-09-21T15:05:55.308Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 8,
+        "version": 16,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/content_types/headerModel"
+      },
+      "displayField": null,
+      "name": "HeaderModel",
+      "description": "HeaderModel",
+      "fields": [
+        {
+          "id": "logo",
+          "name": "Logo",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "navigations",
+          "name": "Navigation",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "banner",
+        "type": "ContentType",
+        "createdAt": "2024-09-21T17:03:37.436Z",
+        "updatedAt": "2024-09-21T17:03:38.037Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-09-21T17:03:38.037Z",
+        "firstPublishedAt": "2024-09-21T17:03:38.037Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/content_types/banner"
+      },
+      "displayField": "title",
+      "name": "Banner",
+      "description": "Banner",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "subtitle",
+          "name": "Subtitle",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "backgroundImage",
+          "name": "Background image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "buttonText",
+          "name": "Button text",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "footerModel",
+        "type": "ContentType",
+        "createdAt": "2024-09-21T17:08:02.577Z",
+        "updatedAt": "2024-09-24T17:21:47.982Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2024-09-24T17:21:47.982Z",
+        "firstPublishedAt": "2024-09-21T17:08:03.292Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/content_types/footerModel"
+      },
+      "displayField": null,
+      "name": "FooterModel",
+      "description": "",
+      "fields": [
+        {
+          "id": "aboutUs",
+          "name": "About us",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript",
+                "strikethrough"
+              ],
+              "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "table",
+                "asset-hyperlink",
+                "embedded-entry-inline",
+                "entry-hyperlink",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "quickLinks",
+          "name": "Quick Links",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+            ]
+          }
+        },
+        {
+          "id": "contactInfo",
+          "name": "Contact Info",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript",
+                "strikethrough"
+              ],
+              "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "table",
+                "asset-hyperlink",
+                "embedded-entry-inline",
+                "entry-hyperlink",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "navigation",
+        "type": "ContentType",
+        "createdAt": "2024-09-22T16:01:21.683Z",
+        "updatedAt": "2024-09-22T16:01:22.199Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-09-22T16:01:22.199Z",
+        "firstPublishedAt": "2024-09-22T16:01:22.199Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/content_types/navigation"
+      },
+      "displayField": "title",
+      "name": "Navigation",
+      "description": "Navigation",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "menuItems",
+          "name": "Menu items",
+          "type": "Object",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "footerTopModel",
+        "type": "ContentType",
+        "createdAt": "2024-09-25T18:03:02.351Z",
+        "updatedAt": "2024-09-25T18:03:02.880Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-09-25T18:03:02.880Z",
+        "firstPublishedAt": "2024-09-25T18:03:02.880Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/content_types/footerTopModel"
+      },
+      "displayField": "cardTitle",
+      "name": "Footer Top Model",
+      "description": "",
+      "fields": [
+        {
+          "id": "bgImage",
+          "name": "Bg Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "cardTitle",
+          "name": "Card Title",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "cardDescription",
+          "name": "Card description",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "aboutUs",
+        "type": "ContentType",
+        "createdAt": "2024-09-26T17:11:00.191Z",
+        "updatedAt": "2024-09-26T17:11:00.776Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-09-26T17:11:00.776Z",
+        "firstPublishedAt": "2024-09-26T17:11:00.776Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/content_types/aboutUs"
+      },
+      "displayField": null,
+      "name": "About US",
+      "description": "",
+      "fields": [
+        {
+          "id": "aboutUsImage",
+          "name": "About Us Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "aboutUsDescription",
+          "name": "About Us Description",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript",
+                "strikethrough"
+              ],
+              "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "table",
+                "asset-hyperlink",
+                "embedded-entry-inline",
+                "entry-hyperlink",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "q3q4qxs0gg0e",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 12,
+        "createdAt": "2024-09-19T17:15:16.636Z",
+        "createdBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-26T18:32:24.997Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "productModel",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "id",
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "productImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "category",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "q3q4qxs0gg0e",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-09-19T17:19:27.716Z",
+        "createdBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-19T17:19:29.251Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "homeModel",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "bannerImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "newProducts",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "productContent",
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "q3q4qxs0gg0e",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 16,
+        "createdAt": "2024-09-21T15:05:55.476Z",
+        "createdBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-26T16:57:09.401Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "headerModel",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "logo",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "navigations",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "q3q4qxs0gg0e",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-09-21T17:03:38.228Z",
+        "createdBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-21T17:03:39.272Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "banner",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "subtitle",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "backgroundImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "buttonText",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "q3q4qxs0gg0e",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 10,
+        "createdAt": "2024-09-21T17:08:03.498Z",
+        "createdBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-24T17:21:49.066Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "footerModel",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "aboutUs",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "quickLinks",
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "contactInfo",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "q3q4qxs0gg0e",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-09-22T16:01:22.354Z",
+        "createdBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-22T16:01:23.338Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "navigation",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "menuItems",
+          "widgetId": "objectEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "q3q4qxs0gg0e",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-09-25T18:03:03.130Z",
+        "createdBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-25T18:03:04.185Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "footerTopModel",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "bgImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "cardTitle",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "cardDescription",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "q3q4qxs0gg0e",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-09-26T17:11:01.026Z",
+        "createdBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-09-26T17:11:01.911Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7I4Bz5wSB9g4ld5gXHATDb",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "aboutUs",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "aboutUsImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "aboutUsDescription",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "5tplUPGuoCHMXx72YNJfuz",
+        "type": "Entry",
+        "createdAt": "2024-09-21T15:06:33.923Z",
+        "updatedAt": "2024-09-26T16:54:41.299Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 17,
+        "publishedAt": "2024-09-26T16:54:41.299Z",
+        "firstPublishedAt": "2024-09-21T15:06:55.062Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 18,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "headerModel"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/5tplUPGuoCHMXx72YNJfuz"
+      },
+      "fields": {
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6z6f1XSUxwm7nf6hSe2hXA"
+            }
+          }
+        },
+        "navigations": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3ANmrONIFVeoApP1vsEwTH"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "51vvVZan9Tavu9xZ5Aj44B"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "Y37L7UaOHDyy85C34msRq"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1MktMEYEfFARLEKCDi4p2I"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "3d6PGqcCLD9tJ0heGAju6a",
+        "type": "Entry",
+        "createdAt": "2024-09-21T17:03:45.171Z",
+        "updatedAt": "2024-09-22T14:35:46.454Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2024-09-22T14:35:46.454Z",
+        "firstPublishedAt": "2024-09-21T17:04:36.070Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "banner"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/3d6PGqcCLD9tJ0heGAju6a"
+      },
+      "fields": {
+        "title": {
+          "en-US": "This is Heading"
+        },
+        "subtitle": {
+          "en-US": "This is the description"
+        },
+        "backgroundImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3hwMkStJA5qhp26Wx4CUK6"
+            }
+          }
+        },
+        "buttonText": {
+          "en-US": "Know more"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "7veAz3ZKSW7n75VvkJ6nbE",
+        "type": "Entry",
+        "createdAt": "2024-09-21T17:09:02.874Z",
+        "updatedAt": "2024-09-25T07:29:38.175Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 45,
+        "publishedAt": "2024-09-25T07:29:38.175Z",
+        "firstPublishedAt": "2024-09-21T17:12:40.634Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 11,
+        "version": 46,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "footerModel"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/7veAz3ZKSW7n75VvkJ6nbE"
+      },
+      "fields": {
+        "aboutUs": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "About us",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-5"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "quickLinks": {
+          "en-US": [
+            "Product",
+            "About",
+            "Contact"
+          ]
+        },
+        "contactInfo": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "heading-5",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Contact Info",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Email: info@example.com",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Phone: +123 456 7890",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "3ANmrONIFVeoApP1vsEwTH",
+        "type": "Entry",
+        "createdAt": "2024-09-22T16:01:28.916Z",
+        "updatedAt": "2024-09-22T16:01:37.271Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2024-09-22T16:01:37.271Z",
+        "firstPublishedAt": "2024-09-22T16:01:37.271Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/3ANmrONIFVeoApP1vsEwTH"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Home"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "Y37L7UaOHDyy85C34msRq",
+        "type": "Entry",
+        "createdAt": "2024-09-22T16:01:45.659Z",
+        "updatedAt": "2024-09-22T16:02:54.028Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2024-09-22T16:02:54.028Z",
+        "firstPublishedAt": "2024-09-22T16:02:54.028Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/Y37L7UaOHDyy85C34msRq"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Products"
+        },
+        "menuItems": {
+          "en-US": {
+            "products": [
+              {
+                "title": "Product 1",
+                "url": "/product/1"
+              },
+              {
+                "title": "Product 2",
+                "url": "/product/2"
+              },
+              {
+                "title": "Product 3",
+                "url": "/product/3"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "1ZrsxkMnmVUlc920m5llcB",
+        "type": "Entry",
+        "createdAt": "2024-09-25T18:03:14.646Z",
+        "updatedAt": "2024-09-25T18:10:30.496Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2024-09-25T18:10:30.496Z",
+        "firstPublishedAt": "2024-09-25T18:05:23.705Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "footerTopModel"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/1ZrsxkMnmVUlc920m5llcB"
+      },
+      "fields": {
+        "bgImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2D6y35qA0XXeVTrs9OlCpk"
+            }
+          }
+        },
+        "cardTitle": {
+          "en-US": "Card 1 Title"
+        },
+        "cardDescription": {
+          "en-US": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "3qmM6YDHO25heYyV1b87QU",
+        "type": "Entry",
+        "createdAt": "2024-09-25T18:10:50.979Z",
+        "updatedAt": "2024-09-25T18:11:25.615Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2024-09-25T18:11:25.615Z",
+        "firstPublishedAt": "2024-09-25T18:11:25.615Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "footerTopModel"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/3qmM6YDHO25heYyV1b87QU"
+      },
+      "fields": {
+        "bgImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2D6y35qA0XXeVTrs9OlCpk"
+            }
+          }
+        },
+        "cardTitle": {
+          "en-US": "Card 2 Title"
+        },
+        "cardDescription": {
+          "en-US": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "51vvVZan9Tavu9xZ5Aj44B",
+        "type": "Entry",
+        "createdAt": "2024-09-26T16:51:08.160Z",
+        "updatedAt": "2024-09-26T16:53:53.285Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2024-09-26T16:53:53.285Z",
+        "firstPublishedAt": "2024-09-26T16:51:21.828Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/51vvVZan9Tavu9xZ5Aj44B"
+      },
+      "fields": {
+        "title": {
+          "en-US": "About"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "1MktMEYEfFARLEKCDi4p2I",
+        "type": "Entry",
+        "createdAt": "2024-09-26T16:54:00.079Z",
+        "updatedAt": "2024-09-26T16:54:06.327Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2024-09-26T16:54:06.327Z",
+        "firstPublishedAt": "2024-09-26T16:54:06.327Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/1MktMEYEfFARLEKCDi4p2I"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Contact"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "2tTFhwDsypW42DzdyrpdFV",
+        "type": "Entry",
+        "createdAt": "2024-09-26T17:11:08.269Z",
+        "updatedAt": "2024-09-26T17:17:28.142Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2024-09-26T17:17:28.142Z",
+        "firstPublishedAt": "2024-09-26T17:17:28.142Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "aboutUs"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/2tTFhwDsypW42DzdyrpdFV"
+      },
+      "fields": {
+        "aboutUsImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "60zNvpz4hbodYF90UrKFGv"
+            }
+          }
+        },
+        "aboutUsDescription": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "heading-2",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "About Our Company",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "We are a company dedicated to providing the best products and services to our customers. Our mission is to innovate and lead the market with cutting-edge technology and unparalleled customer service. Our team is passionate, and our values are rooted in integrity, quality, and excellence.From our humble beginnings to where we are now, we have grown with the support of our loyal customers. We believe in constant improvement and evolving to meet the needs of a changing world. Let us help you find the perfect solution for your business needs.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "6dArCsgZiHEvFroMlbQL1S",
+        "type": "Entry",
+        "createdAt": "2024-09-26T17:26:24.768Z",
+        "updatedAt": "2024-09-26T18:33:03.273Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 26,
+        "publishedAt": "2024-09-26T18:33:03.273Z",
+        "firstPublishedAt": "2024-09-26T17:28:33.859Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 27,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "productModel"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/6dArCsgZiHEvFroMlbQL1S"
+      },
+      "fields": {
+        "id": {
+          "en-US": 1
+        },
+        "name": {
+          "en-US": "Product 1"
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Packing",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                  {
+                                    "type": "code"
+                                  }
+                                ],
+                                "value": "100 x 100",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Type",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Paper",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Compotion",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Flavour",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  }
+                ],
+                "nodeType": "table"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "productImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2YjcA9CarKXMPLiumG9VQg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "30PpSFbdrbjGlqgWwTdpRj",
+        "type": "Entry",
+        "createdAt": "2024-09-26T17:31:49.505Z",
+        "updatedAt": "2024-09-26T18:32:52.671Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "publishedAt": "2024-09-26T18:32:52.671Z",
+        "firstPublishedAt": "2024-09-26T17:32:22.846Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 11,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "productModel"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/30PpSFbdrbjGlqgWwTdpRj"
+      },
+      "fields": {
+        "id": {
+          "en-US": 2
+        },
+        "name": {
+          "en-US": "Product 2"
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Packing",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                  {
+                                    "type": "code"
+                                  }
+                                ],
+                                "value": "100 x 100",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Type",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Paper",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Compotion",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Flavour",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  }
+                ],
+                "nodeType": "table"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "productImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2YjcA9CarKXMPLiumG9VQg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "gh2phskJOHKTlrmRT6rZR",
+        "type": "Entry",
+        "createdAt": "2024-09-26T17:32:30.971Z",
+        "updatedAt": "2024-09-26T18:32:39.314Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "publishedAt": "2024-09-26T18:32:39.314Z",
+        "firstPublishedAt": "2024-09-26T17:32:50.907Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 11,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "productModel"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/entries/gh2phskJOHKTlrmRT6rZR"
+      },
+      "fields": {
+        "id": {
+          "en-US": 3
+        },
+        "name": {
+          "en-US": "Product 3"
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Packing",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                  {
+                                    "type": "code"
+                                  }
+                                ],
+                                "value": "100 x 100",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Type",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Paper",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Compotion",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  },
+                  {
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "Flavour",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      },
+                      {
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "data": {
+                            },
+                            "content": [
+                              {
+                                "data": {
+                                },
+                                "marks": [
+                                ],
+                                "value": "",
+                                "nodeType": "text"
+                              }
+                            ],
+                            "nodeType": "paragraph"
+                          }
+                        ],
+                        "nodeType": "table-cell"
+                      }
+                    ],
+                    "nodeType": "table-row"
+                  }
+                ],
+                "nodeType": "table"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "productImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2YjcA9CarKXMPLiumG9VQg"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "6z6f1XSUxwm7nf6hSe2hXA",
+        "type": "Asset",
+        "createdAt": "2024-09-19T17:27:31.566Z",
+        "updatedAt": "2024-09-19T17:28:03.285Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2024-09-19T17:28:03.285Z",
+        "firstPublishedAt": "2024-09-19T17:28:03.285Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/assets/6z6f1XSUxwm7nf6hSe2hXA"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Logo"
+        },
+        "description": {
+          "en-US": "TCS"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/q3q4qxs0gg0e/6z6f1XSUxwm7nf6hSe2hXA/6e529e2dddb519068682d48696478074/Tata_Consultancy_Services_Logo.svg",
+            "details": {
+              "size": 11295,
+              "image": {
+                "width": 739,
+                "height": 297
+              }
+            },
+            "fileName": "Tata_Consultancy_Services_Logo.svg",
+            "contentType": "image/svg+xml"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "3hwMkStJA5qhp26Wx4CUK6",
+        "type": "Asset",
+        "createdAt": "2024-09-21T17:04:10.201Z",
+        "updatedAt": "2024-09-21T17:04:27.443Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2024-09-21T17:04:27.443Z",
+        "firstPublishedAt": "2024-09-21T17:04:27.443Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/assets/3hwMkStJA5qhp26Wx4CUK6"
+      },
+      "fields": {
+        "title": {
+          "en-US": "banner"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/q3q4qxs0gg0e/3hwMkStJA5qhp26Wx4CUK6/8dccd634bbd958297b83cae7bb808f37/banner-image.jpg",
+            "details": {
+              "size": 234493,
+              "image": {
+                "width": 1200,
+                "height": 400
+              }
+            },
+            "fileName": "banner-image.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "2D6y35qA0XXeVTrs9OlCpk",
+        "type": "Asset",
+        "createdAt": "2024-09-25T18:03:18.597Z",
+        "updatedAt": "2024-09-25T18:04:21.390Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2024-09-25T18:04:21.390Z",
+        "firstPublishedAt": "2024-09-25T18:04:21.390Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/assets/2D6y35qA0XXeVTrs9OlCpk"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Card Bg image"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/q3q4qxs0gg0e/2D6y35qA0XXeVTrs9OlCpk/b200a7b9750c23892324ae478b54efe0/card1.jpg",
+            "details": {
+              "size": 45255,
+              "image": {
+                "width": 1080,
+                "height": 720
+              }
+            },
+            "fileName": "card1.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "60zNvpz4hbodYF90UrKFGv",
+        "type": "Asset",
+        "createdAt": "2024-09-26T17:11:26.343Z",
+        "updatedAt": "2024-09-26T17:17:19.167Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2024-09-26T17:17:19.167Z",
+        "firstPublishedAt": "2024-09-26T17:17:19.167Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/assets/60zNvpz4hbodYF90UrKFGv"
+      },
+      "fields": {
+        "title": {
+          "en-US": "aboutus"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/q3q4qxs0gg0e/60zNvpz4hbodYF90UrKFGv/f2fe3f71125478e6233c8aa4f60d45fc/aboutus.jpg",
+            "details": {
+              "size": 68454,
+              "image": {
+                "width": 1920,
+                "height": 1344
+              }
+            },
+            "fileName": "aboutus.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "id": "2YjcA9CarKXMPLiumG9VQg",
+        "type": "Asset",
+        "createdAt": "2024-09-26T17:27:25.568Z",
+        "updatedAt": "2024-09-26T17:28:20.734Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2024-09-26T17:28:20.734Z",
+        "firstPublishedAt": "2024-09-26T17:28:20.734Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/q3q4qxs0gg0e/environments/master/assets/2YjcA9CarKXMPLiumG9VQg"
+      },
+      "fields": {
+        "title": {
+          "en-US": "product"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/q3q4qxs0gg0e/2YjcA9CarKXMPLiumG9VQg/24cb2e70ae8f327951f80fef812c16de/product1.jpg",
+            "details": {
+              "size": 10878,
+              "image": {
+                "width": 225,
+                "height": 225
+              }
+            },
+            "fileName": "product1.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "762N8MK7MjoRaif2MrbD7T",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "cf0013e9-6c4f-4791-b813-7e4232715b0d"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "createdAt": "2024-09-19T17:09:53Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedAt": "2024-09-19T17:09:53Z"
+      }
+    }
+  ],
+  "webhooks": [
+  ],
+  "roles": [
+    {
+      "name": "Author",
+      "description": "Allows editing of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "create"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "76nJDdoOo1qf2gbTzAAdaZ",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "createdAt": "2024-09-19T17:09:53Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedAt": "2024-09-19T17:09:53Z"
+      }
+    },
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "76onorIqDqRjZSXppYeoLH",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "createdAt": "2024-09-19T17:09:53Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedAt": "2024-09-19T17:09:53Z"
+      }
+    },
+    {
+      "name": "Translator",
+      "description": "Allows editing of localized fields in the specified language",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "read"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": [
+            "update"
+          ],
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              },
+              {
+                "paths": [
+                  {
+                    "doc": "fields.%.%"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "76panOfEUaVVIm3MQaQkmV",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "q3q4qxs0gg0e"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "createdAt": "2024-09-19T17:09:53Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7I4Bz5wSB9g4ld5gXHATDb"
+          }
+        },
+        "updatedAt": "2024-09-19T17:09:53Z"
+      }
+    }
+  ]
+}
