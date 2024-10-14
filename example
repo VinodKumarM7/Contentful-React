@@ -1,0 +1,75 @@
+import { getRequestConfig } from 'next-intl/server';
+import { headers } from 'next/headers';
+
+export default getRequestConfig(async () => {
+  const availableLocales = ['en', 'de'];
+  const defaultLocale = 'de';
+
+  try {
+    // Get the request headers
+    const headersList = headers();
+
+    // Extract locale from the 'locale' header
+    const localeFromHeader = headersList.get('locale') || '';
+    
+    // Fallback to default locale if the header does not match the available ones
+    const locale = availableLocales.includes(localeFromHeader) ? localeFromHeader : defaultLocale;
+
+    // Dynamically import the corresponding locale message file
+    const messages = (await import(`../../messages/${locale}.json`)).default;
+
+    return {
+      locale,
+      messages
+    };
+  } catch (error) {
+    console.error('Error loading locale or messages:', error);
+
+    // Fallback in case of any error
+    const fallbackMessages = (await import(`../../messages/${defaultLocale}.json`)).default;
+
+    return {
+      locale: defaultLocale,
+      messages: fallbackMessages
+    };
+  }
+});
+
+
+
+asdfasdf
+
+
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export function middleware(request: NextRequest) {
+  // Create a copy of the request headers
+  const requestHeaders = new Headers(request.headers);
+  const url = new URL(request.url);
+
+  // Extract the second segment of the pathname for the locale (e.g., '/en/some-page')
+  const pathSegments = url.pathname.split('/').filter(Boolean);
+
+  // Ensure that we have at least one segment, then extract the locale
+  const locale = pathSegments[1] || null;
+
+  // If no locale is found, just pass the request without modifying it
+  if (!locale) {
+    return NextResponse.next();
+  }
+
+  // Set the 'locale' header if not already present or if it differs
+  if (locale !== requestHeaders.get('locale')) {
+    requestHeaders.set('locale', locale);
+  }
+
+  // Create a response and pass the modified headers
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+
+  return response;
+}
