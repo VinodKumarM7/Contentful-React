@@ -1,181 +1,204 @@
-
-"use client"
-import React, { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation';
-import { language } from '@/app/[countrycode]/[locale]/login/constants';
-
-function Dropdown({ pagename }: { pagename: string }) {
-    const router = useRouter();
-    const pathname = usePathname();
-
-    const urlparams = useParams();
-    const { countrycode, locale } = urlparams;
-
-    const [currLang, setCurrLang] = useState<string>(locale); // current language
-    const [currCountry, setCurrCountry] = useState<string>(countrycode); // current country
-
-    useEffect(() => {
-        setCurrLang(locale); // Update language when locale changes
-    }, [locale]);
-
-    const changeLanguage = (e: any) => {
-        const selectedLang = e.target.value;
-        setCurrLang(selectedLang);  // Update state for selected language
-        
-        // Update URL without changing the country code
-        router.push(`/${currCountry}/${selectedLang}/${pagename}`);
-    };
-
-    return (
-        <div className='mb-4'>
-            <select
-                style={{ cursor: 'pointer' }} 
-                className='ml-auto block w-full/8 px-2 border border-gray-3oo rounded-md focus:outline-none focus:ring-2 focus:ring-rgb(197 40 28 )-500'
-                onChange={changeLanguage}
-                value={currLang}
-            >
-                {language.map((language) => (
-                    <option
-                        key={language.id}
-                        style={{ cursor: 'pointer' }}
-                        value={language.value}
-                    >
-                        {language.name}
-                    </option>
-                ))}
-            </select>
-        </div>
-    );
-}
-
-export default Dropdown;
+Here is a draft of reverse knowledge transfer (KT) and understanding documents based on the details you provided:
 
 
-'use client';
-import React, { useEffect, useState } from 'react';
-import Dropdown from '../Dropdown';
-import { useTranslations } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
-import Link from 'next/link';
+---
 
-function LoginForm() {
-    const pathname = usePathname();
-    const lang = pathname.split('/')[1]; // Extract only the lang part of the URL
-    const t = useTranslations('LoginPage'); // Locale will be handled by next-intl based on the lang in the URL
+Reverse Knowledge Transfer (KT) Document
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [rememberMe, setRememberMe] = useState(false);
-    const [error, setError] = useState('');
-    const router = useRouter();
+I. Deployment Branches
 
-    // Validate Inputs (email and password)
-    const validateInputs = () => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+We have specific branches for each environment, and deployment is managed through these branches:
 
-        if (!username || !emailRegex.test(username)) {
-          setError(t('invalidEmail')); // Translation based on lang
-          return false;
-        }
+1. SIT (System Integration Testing): Uses the Develop branch.
 
-        const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\w_]).{8,}$/;
-        if (!password) {
-          setError(t('invalidPassword')); // Translation based on lang
-          return false;
-        }
-        if (!strongPasswordRegex.test(password)) {
-          setError(t('invalidPassword')); // Translation based on lang
-          return false;
-        }
-        setError('');
-        return true;
-    };
 
-    const handleSubmit = async (event: React.FormEvent) => {
-        event.preventDefault();
-     
-        const raw = JSON.stringify({
-          username,
-          password,
-        });
-     
-        try {
-          const response = await fetch("https://qaxb7v25uojzpzg7lqz5saqicu0wvqfk.lambda-url.eu-central-1.on.aws/login", {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: raw,
-          });
-           
-          if (response.ok) { 
-            router.push('dashboard'); 
-          } else {
-            setError(t('invalidLogin')); // Show error if login fails, translated text
-          }
-        } catch (error) {
-          console.error('Error in API request', error);
-        }
-    };
-     
-  return (
-    <>
-      <main className="login-main-custom">
-        <div className="max-w-xl w-full mx-5">
-          <h1 className="login-main-htag-custom">{t('title')}</h1>
-          
-          <form onSubmit={handleSubmit}>
-            {error && <div id="error bg-error-bg  text-error-text p-6 mb-4" className="error-message">
-              <p>{error}</p>
-            </div>}
-                        
-            <div className="mb-10">
-              <label htmlFor="username" className="login-main-label-custom">{t('email')}</label>
-              <input 
-                type="email" 
-                id="username" 
-                name="username"
-                className="log-main-input-cust log-main-input-border text-md"
-                aria-label="E-mail address" 
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
+2. UAT (User Acceptance Testing): Uses the Develop branch.
 
-            <div className="mb-6">
-              <label htmlFor="password" className="login-main-label-custom">{t('password')}</label>
-              <input 
-                type="password" 
-                id="password" 
-                name="password"
-                className="log-main-input-cust log-main-input-border"
-                aria-label="Password" 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
 
-            <div className="mb-14 login-main-common-custom">
-              <label className="flex text-gray-700">
-                <input type="checkbox" name="remember" />
-                <span className="login-main-remember-span-custom">{t('rmemberme')}</span>
-              </label>
-              <Link href={`/${lang}/forgot-password`} className="login-main-forgot-custom">
-                {t('forgotpassword')}
-              </Link>
-            </div>
+3. PROD (Production): Uses the Master branch.
 
-            <div className="flex items-center justify-center">
-              <button type="submit" className="login-main-redbtn-custom">{t('submitbtntext')}</button>
-            </div>
-          </form>
 
-          <div className='flex items-center justify-center mt-10'>
-            <Dropdown pagename='login'></Dropdown>
-          </div>
-        </div>
-      </main>
-    </>
-  );
-}
 
-export default LoginForm;
+II. Pipeline (CI/CD) Overview
+
+Our CI/CD pipeline follows an automated and manual process based on the environment:
+
+SIT pipeline is automatically triggered.
+
+UAT and PROD pipelines must be manually triggered.
+
+
+Pipeline Stages:
+
+1. Lint Test: Ensures JavaScript files are error-free before deployment.
+
+
+2. Deploy: Copies S3 buckets from the previous environment.
+
+
+3. Invalidation: Invalidates CloudFront cache to update content.
+
+
+4. Test Automation (UAT): Runs automated tests during UAT.
+
+
+
+Environment Dependency:
+
+Deployments are environment-dependent, meaning you cannot deploy directly to UAT or PROD without first deploying to the preceding environment (SIT → UAT → PROD).
+
+III. Deployment Preparation
+
+When creating a new feature branch, follow these steps:
+
+1. Create a feature branch from Master:
+
+Checkout to the Master branch.
+
+Pull the latest updates: git pull.
+
+Create a new feature branch:
+git checkout -b "feature/vdm-<ticket_id>-<ticket_description>"
+
+Push the feature branch:
+git push --set-upstream origin feature/vdm-<ticket_id>-<ticket_description>
+
+
+
+2. Commit messages should start with the prefix VDM- followed by a ticket ID and a concise description, e.g., VDM-1234: Added new feature.
+
+
+
+IV. SIT & UAT Deployment
+
+Best practices for testing:
+
+1. Merge the feature branch to the Develop branch.
+
+
+2. Switch to the Develop branch:
+git checkout develop
+
+
+3. Pull the latest updates from Develop:
+git pull
+
+
+4. Create a tag for the deployment in the format:
+<stage> <UTC_timedate>, e.g., SIT 2024061109030
+
+
+5. Push the tag:
+git push --tags
+
+
+6. Follow the deployment process as outlined in Section II.
+
+
+
+V. PROD Deployment
+
+The deployment process for PROD is similar to the SIT and UAT stages, with a few exceptions:
+
+Merge feature branches directly into the Master branch.
+
+Deploy only from the Master branch.
+
+
+Deployment Stages:
+
+1. Pre-Deployment: Prepare Git tags, merge branches, and create tags.
+
+
+2. Post-Deployment: Key steps include:
+
+Backing up the database and assigning it to the Master instance.
+
+Running the SIT → UAT → PROD pipelines.
+
+Running uSync to update the database.
+
+Updating content using CMS.
+
+Running DB scripts to check and fix errors.
+
+Assigning the new DB to the worker instance.
+
+
+
+
+
+---
+
+Understanding Document
+
+I. Deployment Branches
+
+Develop Branch is used for SIT and UAT environments.
+
+Master Branch is reserved for Production deployments.
+
+
+II. Pipeline (CI/CD)
+
+The pipeline for SIT is fully automated, while UAT and PROD require manual intervention.
+
+Stages include lint testing, S3 bucket deployment, CloudFront cache invalidation, and test automation for UAT.
+
+Deployment to environments follows a strict order: SIT → UAT → PROD.
+
+
+III. Branch and Tag Management
+
+Feature branches must be created from the Master Branch and follow a specific naming convention (feature/vdm-<ticket_id>-<description>).
+
+Tag names for deployments follow a set format, including the stage and UTC timestamp.
+
+
+IV. Deployment Process
+
+SIT and UAT testing requires the merging of the feature branch into Develop, followed by the creation of deployment tags.
+
+The Master Branch is used exclusively for production deployment.
+
+For PROD deployment, database backup, assignment, and content updates are critical tasks, alongside running the CI/CD pipelines and uSync.
+
+
+V. Prod Deployment Activities
+
+Pre-deployment involves Git tag creation and branch merging.
+
+Post-deployment tasks include DB backups, pipeline execution, uSync updates, content updates, and error checks through DB scripts.
+
+
+VI. KT for Umbraco Platform Deployment
+
+1. Clone the umbraco-platform repository.
+
+
+2. Switch to the develop branch.
+
+
+3. Create a connectionStrings.config file in the root directory.
+
+
+4. Remove the version value from web.config for the Umbraco version.
+
+
+5. Copy relevant media folders to the appropriate directories.
+
+
+6. Start the IIS server and follow the installation steps to set up the Umbraco platform.
+
+
+7. After setup, use uSync to import and update the platform's configuration.
+
+
+8. Complete the deployment by ensuring content is updated and errors are checked.
+
+
+
+
+---
+
+Let me know if you need to modify or add more details!
