@@ -1,204 +1,45 @@
-Here is a draft of reverse knowledge transfer (KT) and understanding documents based on the details you provided:
+Here are some thoughtful questions you might consider asking based on the provided content:
 
+1. Regarding Branching and Pipelines:
 
----
+Why is the Develop branch used for both SIT and UAT environments, and how do we ensure there are no conflicts or issues between these stages?
 
-Reverse Knowledge Transfer (KT) Document
+Could there be any improvements in using separate branches for SIT and UAT for better environment isolation?
 
-I. Deployment Branches
 
-We have specific branches for each environment, and deployment is managed through these branches:
 
-1. SIT (System Integration Testing): Uses the Develop branch.
+2. On the Pipeline Process:
 
+What are the criteria for determining when UAT and PROD pipelines should be manually triggered, and is there a possibility of automating parts of these processes while retaining control?
 
-2. UAT (User Acceptance Testing): Uses the Develop branch.
+Are there any monitoring mechanisms in place during the Lint Test and Deploy stages to quickly catch potential errors?
 
 
-3. PROD (Production): Uses the Master branch.
 
+3. Regarding Feature Branch Creation:
 
+Why are feature branches created from the Master branch instead of the Develop branch, especially since development is ongoing in the latter?
 
-II. Pipeline (CI/CD) Overview
+How often should we clean up stale feature branches after they are merged and deployed?
 
-Our CI/CD pipeline follows an automated and manual process based on the environment:
 
-SIT pipeline is automatically triggered.
 
-UAT and PROD pipelines must be manually triggered.
+4. For Deployment Best Practices:
 
+In the event of a failure during a production deployment, what is the rollback process and how quickly can we revert changes?
 
-Pipeline Stages:
+Is there a formal review process before merging feature branches into the Master branch to ensure stability?
 
-1. Lint Test: Ensures JavaScript files are error-free before deployment.
 
 
-2. Deploy: Copies S3 buckets from the previous environment.
+5. Umbraco Platform Specific:
 
+What specific content or settings are typically updated using uSync, and how often do we need to run the import process during deployment?
 
-3. Invalidation: Invalidates CloudFront cache to update content.
+Could there be automated checks or tests integrated into the Umbraco deployment process to ensure all configurations are correct post-deployment?
 
 
-4. Test Automation (UAT): Runs automated tests during UAT.
 
 
+These questions could help clarify processes, identify potential improvements, and ensure that the deployment flow is as efficient and error-free as possible.
 
-Environment Dependency:
-
-Deployments are environment-dependent, meaning you cannot deploy directly to UAT or PROD without first deploying to the preceding environment (SIT → UAT → PROD).
-
-III. Deployment Preparation
-
-When creating a new feature branch, follow these steps:
-
-1. Create a feature branch from Master:
-
-Checkout to the Master branch.
-
-Pull the latest updates: git pull.
-
-Create a new feature branch:
-git checkout -b "feature/vdm-<ticket_id>-<ticket_description>"
-
-Push the feature branch:
-git push --set-upstream origin feature/vdm-<ticket_id>-<ticket_description>
-
-
-
-2. Commit messages should start with the prefix VDM- followed by a ticket ID and a concise description, e.g., VDM-1234: Added new feature.
-
-
-
-IV. SIT & UAT Deployment
-
-Best practices for testing:
-
-1. Merge the feature branch to the Develop branch.
-
-
-2. Switch to the Develop branch:
-git checkout develop
-
-
-3. Pull the latest updates from Develop:
-git pull
-
-
-4. Create a tag for the deployment in the format:
-<stage> <UTC_timedate>, e.g., SIT 2024061109030
-
-
-5. Push the tag:
-git push --tags
-
-
-6. Follow the deployment process as outlined in Section II.
-
-
-
-V. PROD Deployment
-
-The deployment process for PROD is similar to the SIT and UAT stages, with a few exceptions:
-
-Merge feature branches directly into the Master branch.
-
-Deploy only from the Master branch.
-
-
-Deployment Stages:
-
-1. Pre-Deployment: Prepare Git tags, merge branches, and create tags.
-
-
-2. Post-Deployment: Key steps include:
-
-Backing up the database and assigning it to the Master instance.
-
-Running the SIT → UAT → PROD pipelines.
-
-Running uSync to update the database.
-
-Updating content using CMS.
-
-Running DB scripts to check and fix errors.
-
-Assigning the new DB to the worker instance.
-
-
-
-
-
----
-
-Understanding Document
-
-I. Deployment Branches
-
-Develop Branch is used for SIT and UAT environments.
-
-Master Branch is reserved for Production deployments.
-
-
-II. Pipeline (CI/CD)
-
-The pipeline for SIT is fully automated, while UAT and PROD require manual intervention.
-
-Stages include lint testing, S3 bucket deployment, CloudFront cache invalidation, and test automation for UAT.
-
-Deployment to environments follows a strict order: SIT → UAT → PROD.
-
-
-III. Branch and Tag Management
-
-Feature branches must be created from the Master Branch and follow a specific naming convention (feature/vdm-<ticket_id>-<description>).
-
-Tag names for deployments follow a set format, including the stage and UTC timestamp.
-
-
-IV. Deployment Process
-
-SIT and UAT testing requires the merging of the feature branch into Develop, followed by the creation of deployment tags.
-
-The Master Branch is used exclusively for production deployment.
-
-For PROD deployment, database backup, assignment, and content updates are critical tasks, alongside running the CI/CD pipelines and uSync.
-
-
-V. Prod Deployment Activities
-
-Pre-deployment involves Git tag creation and branch merging.
-
-Post-deployment tasks include DB backups, pipeline execution, uSync updates, content updates, and error checks through DB scripts.
-
-
-VI. KT for Umbraco Platform Deployment
-
-1. Clone the umbraco-platform repository.
-
-
-2. Switch to the develop branch.
-
-
-3. Create a connectionStrings.config file in the root directory.
-
-
-4. Remove the version value from web.config for the Umbraco version.
-
-
-5. Copy relevant media folders to the appropriate directories.
-
-
-6. Start the IIS server and follow the installation steps to set up the Umbraco platform.
-
-
-7. After setup, use uSync to import and update the platform's configuration.
-
-
-8. Complete the deployment by ensuring content is updated and errors are checked.
-
-
-
-
----
-
-Let me know if you need to modify or add more details!
