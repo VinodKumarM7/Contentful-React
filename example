@@ -1,29 +1,25 @@
 Middleware,
-
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { language } from '@/app/[countrycode]/[locale]/login/constants';  // Importing language
+
+// Extract valid country codes and locales from language values
+const validCountryCodes = language.map(lang => lang.value);
+const validLocales = language.map(lang => lang.value);
 
 export function middleware(request: NextRequest) {
-  const requestHeaders = new Headers(request.headers);
   const url = new URL(request.url);
   const pathSegments = url.pathname.split('/').filter(Boolean);
-  const locale = pathSegments[1] || null;
+  const countrycode = pathSegments[0];
+  const locale = pathSegments[1];
 
-  if (!locale) {
-    return NextResponse.next();
+  // If either countrycode or locale is missing or invalid, redirect to maintenance
+  if (!countrycode || !validCountryCodes.includes(countrycode) || !locale || !validLocales.includes(locale)) {
+    return NextResponse.redirect(new URL(`/${countrycode || 'us'}/maintenance`, request.url));
   }
 
-  if (locale !== requestHeaders.get('locale')) {
-    requestHeaders.set('locale', locale);
-  }
-
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
-
-  return response;
+  // Proceed if the countrycode and locale are valid
+  return NextResponse.next();
 }
 
 
@@ -32,28 +28,25 @@ import { getRequestConfig } from 'next-intl/server';
 import { headers } from 'next/headers';
 import { language } from '@/app/[countrycode]/[locale]/login/constants';
 
-
 export default getRequestConfig(async () => {
   const availableLocales = language.map(lang => lang.value);  
-  const defaultLocale = 'de';
+  const headersList = headers();
+  const localeFromHeader = headersList.get('locale') || '';
+  
+  // No fallback to defaultLocale, just use the locale from the header or throw an error
+  if (!availableLocales.includes(localeFromHeader)) {
+    throw new Error('Invalid locale');
+  }
 
   try {
-    const headersList = headers();
-    const localeFromHeader = headersList.get('locale') || '';
-    const locale = availableLocales.includes(localeFromHeader) ? localeFromHeader : defaultLocale;
-    const messages = (await import(`../../messages/${locale}.json`)).default;
+    const messages = (await import(`../../messages/${localeFromHeader}.json`)).default;
 
     return {
-      locale,
+      locale: localeFromHeader,
       messages
     };
   } catch (error) {
     console.error('Error loading locale or messages:', error);
-    const fallbackMessages = (await import(`../../messages/${defaultLocale}.json`)).default;
-
-    return {
-      locale: defaultLocale,
-      messages: fallbackMessages
-    };
+    throw new Error('Locale messages not found');
   }
 });
