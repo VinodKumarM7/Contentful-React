@@ -1,33 +1,22 @@
-middleware
+Middleware,
 
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { countries, languages } from './constants';
 
 export function middleware(request: NextRequest) {
-  // Create a new instance of Headers to modify the request's headers
   const requestHeaders = new Headers(request.headers);
   const url = new URL(request.url);
-
-  // Extract the country and lang from the URL (assuming /country/lang/ structure)
   const pathSegments = url.pathname.split('/').filter(Boolean);
+  const locale = pathSegments[1] || null;
 
-  const country = pathSegments[0] || null;
-  const lang = pathSegments[1] || null;
-
-  // Extract valid country codes and language codes
-  const availableCountries = countries.map(c => c.value);
-  const availableLanguages = languages.map(l => l.value);
-
-  // If either the country or language is not valid, redirect to 404 page
-  if (!country || !lang || !availableCountries.includes(country) || !availableLanguages.includes(lang)) {
-    return NextResponse.redirect(new URL(`/404`, request.url)); // Redirect to 404 page
+  if (!locale) {
+    return NextResponse.next();
   }
 
-  // Set the 'locale' header if both country and language are valid
-  requestHeaders.set('locale', lang);
-  
-  // Create a response and pass the modified headers
+  if (locale !== requestHeaders.get('locale')) {
+    requestHeaders.set('locale', locale);
+  }
+
   const response = NextResponse.next({
     request: {
       headers: requestHeaders,
@@ -41,41 +30,30 @@ export function middleware(request: NextRequest) {
 request
 import { getRequestConfig } from 'next-intl/server';
 import { headers } from 'next/headers';
-import { countries, languages } from './constants'; // Adjust the import path as necessary
-import { NextResponse } from 'next/server';
+import { language } from '@/app/[countrycode]/[locale]/login/constants';
 
-export default getRequestConfig(async ({ params }) => {
-  // Extract the locale values from the languages array
-  const availableLocales = languages.map(lang => lang.value);
-  const availableCountries = countries.map(country => country.value);
+
+export default getRequestConfig(async () => {
+  const availableLocales = language.map(lang => lang.value);  
+  const defaultLocale = 'de';
 
   try {
-    // Get the request headers
     const headersList = headers();
-
-    // Extract the 'locale' value from the headers
     const localeFromHeader = headersList.get('locale') || '';
-    
-    // Extract country from params (assuming params.country exists)
-    const { country } = params;
-
-    // If either country or locale is not valid, redirect to 404 page
-    if (!availableLocales.includes(localeFromHeader) || !availableCountries.includes(country)) {
-      // Redirect to custom 404 page
-      return NextResponse.redirect(new URL(`/${localeFromHeader}/404`, params.url));
-    }
-
-    // Dynamically import the appropriate locale messages file
-    const messages = (await import(`../../messages/${localeFromHeader}.json`)).default;
+    const locale = availableLocales.includes(localeFromHeader) ? localeFromHeader : defaultLocale;
+    const messages = (await import(`../../messages/${locale}.json`)).default;
 
     return {
-      locale: localeFromHeader,
-      messages,
+      locale,
+      messages
     };
   } catch (error) {
     console.error('Error loading locale or messages:', error);
+    const fallbackMessages = (await import(`../../messages/${defaultLocale}.json`)).default;
 
-    // If there's an error, redirect to the 404 page for the locale
-    return NextResponse.redirect(new URL(`/${params.lang}/404`, params.url));
+    return {
+      locale: defaultLocale,
+      messages: fallbackMessages
+    };
   }
 });
