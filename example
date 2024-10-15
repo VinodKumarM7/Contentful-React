@@ -1,11 +1,53 @@
+middleware
+
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { countries, languages } from './constants';
+
+export function middleware(request: NextRequest) {
+  // Create a new instance of Headers to modify the request's headers
+  const requestHeaders = new Headers(request.headers);
+  const url = new URL(request.url);
+
+  // Extract the country and lang from the URL (assuming /country/lang/ structure)
+  const pathSegments = url.pathname.split('/').filter(Boolean);
+
+  const country = pathSegments[0] || null;
+  const lang = pathSegments[1] || null;
+
+  // Extract valid country codes and language codes
+  const availableCountries = countries.map(c => c.value);
+  const availableLanguages = languages.map(l => l.value);
+
+  // If either the country or language is not valid, redirect to 404 page
+  if (!country || !lang || !availableCountries.includes(country) || !availableLanguages.includes(lang)) {
+    return NextResponse.redirect(new URL(`/404`, request.url)); // Redirect to 404 page
+  }
+
+  // Set the 'locale' header if both country and language are valid
+  requestHeaders.set('locale', lang);
+  
+  // Create a response and pass the modified headers
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+
+  return response;
+}
+
+
+request
 import { getRequestConfig } from 'next-intl/server';
 import { headers } from 'next/headers';
-import { languages } from './constants'; // Adjust the import path as necessary
-import { notFound } from 'next/navigation'; // Import the notFound function to trigger a 404
+import { countries, languages } from './constants'; // Adjust the import path as necessary
+import { NextResponse } from 'next/server';
 
-export default getRequestConfig(async () => {
+export default getRequestConfig(async ({ params }) => {
   // Extract the locale values from the languages array
   const availableLocales = languages.map(lang => lang.value);
+  const availableCountries = countries.map(country => country.value);
 
   try {
     // Get the request headers
@@ -13,10 +55,14 @@ export default getRequestConfig(async () => {
 
     // Extract the 'locale' value from the headers
     const localeFromHeader = headersList.get('locale') || '';
+    
+    // Extract country from params (assuming params.country exists)
+    const { country } = params;
 
-    // If the locale from the header is not valid, trigger a 404 error
-    if (!availableLocales.includes(localeFromHeader)) {
-      notFound(); // This triggers a 404 error if the locale is not found
+    // If either country or locale is not valid, redirect to 404 page
+    if (!availableLocales.includes(localeFromHeader) || !availableCountries.includes(country)) {
+      // Redirect to custom 404 page
+      return NextResponse.redirect(new URL(`/${localeFromHeader}/404`, params.url));
     }
 
     // Dynamically import the appropriate locale messages file
@@ -29,46 +75,7 @@ export default getRequestConfig(async () => {
   } catch (error) {
     console.error('Error loading locale or messages:', error);
 
-    // In case of error, also trigger a 404 to prevent falling back
-    notFound();
+    // If there's an error, redirect to the 404 page for the locale
+    return NextResponse.redirect(new URL(`/${params.lang}/404`, params.url));
   }
 });
-
-asdf
-
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-import { languages } from './constants';
-import { notFound } from 'next/navigation'; // Import the notFound function to trigger 404
-
-export function middleware(request: NextRequest) {
-  // Create a new instance of Headers to modify the request's headers
-  const requestHeaders = new Headers(request.headers);
-  const url = new URL(request.url);
-
-  // Extract the second segment of the URL path, which corresponds to the locale
-  const pathSegments = url.pathname.split('/').filter(Boolean);
-
-  // Check if a second path segment exists (which would be the locale, e.g., '/en')
-  const locale = pathSegments[1] || null;
-
-  // Extract valid locales from constants
-  const availableLocales = languages.map(lang => lang.value);
-
-  // If no locale is found or the locale is not in the valid list, trigger a 404
-  if (!locale || !availableLocales.includes(locale)) {
-    notFound(); // Trigger 404 if the locale is invalid or missing
-  }
-
-  // Set the 'locale' header if it's valid
-  requestHeaders.set('locale', locale);
-
-  // Create a response and pass the modified headers
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
-
-  return response;
-}
