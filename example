@@ -1,149 +1,74 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import Dropdown from '../Dropdown';
-import { useTranslations } from 'next-intl';
-import { useParams, usePathname, useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { getRequestConfig } from 'next-intl/server';
+import { headers } from 'next/headers';
+import { languages } from './constants'; // Adjust the import path as necessary
+import { notFound } from 'next/navigation'; // Import the notFound function to trigger a 404
 
-function LoginForm() {
-  const pathname = usePathname();
-  const t = useTranslations('LoginPage');
-  
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState('');
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false); // State to toggle password visibility
-  const params = useParams();
-  const { countrycode, locale } = params;
-  
-  const router = useRouter();
+export default getRequestConfig(async () => {
+  // Extract the locale values from the languages array
+  const availableLocales = languages.map(lang => lang.value);
 
-  useEffect(() => {
-    router.refresh();
-  }, [locale, router]);
+  try {
+    // Get the request headers
+    const headersList = headers();
 
-  const togglePasswordVisibility = () => {
-    setIsPasswordVisible(!isPasswordVisible);
-  };
+    // Extract the 'locale' value from the headers
+    const localeFromHeader = headersList.get('locale') || '';
 
-  const validateInputs = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!username || !emailRegex.test(username)) {
-      setError(t('invalidEmail'));
-      return false;
+    // If the locale from the header is not valid, trigger a 404 error
+    if (!availableLocales.includes(localeFromHeader)) {
+      notFound(); // This triggers a 404 error if the locale is not found
     }
-    const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\w_]).{8,}$/;
-    if (!password) {
-      setError(t('invalidPassword'));
-      return false;
-    }
-    if (!strongPasswordRegex.test(password)) {
-      setError(t('invalidPassword'));
-      return false;
-    }
-    setError('');
-    return true;
-  };
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+    // Dynamically import the appropriate locale messages file
+    const messages = (await import(`../../messages/${localeFromHeader}.json`)).default;
 
-    const raw = JSON.stringify({
-      username,
-      password,
-    });
+    return {
+      locale: localeFromHeader,
+      messages,
+    };
+  } catch (error) {
+    console.error('Error loading locale or messages:', error);
 
-    try {
-      const response = await fetch("https://qaxb7v25uojzpzg7lqz5saqicu0wvqfk.lambda-url.eu-central-1.on.aws/login", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: raw,
-      });
+    // In case of error, also trigger a 404 to prevent falling back
+    notFound();
+  }
+});
 
-      if (response.ok) {
-        router.push('dashboard');
-      } else {
-        setError(t('invalidLogin'));
-      }
-    } catch (error) {
-      console.error('Error in API request', error);
-    }
-  };
+asdf
 
-  return (
-    <>
-      <main className="login-main-custom">
-        <div className="max-w-xl w-full mx-5">
-          <h1 className="login-main-htag-custom">{t('title')}</h1>
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { languages } from './constants';
+import { notFound } from 'next/navigation'; // Import the notFound function to trigger 404
 
-          <form onSubmit={handleSubmit}>
-            {error && <div id="error bg-error-bg text-error-text p-6 mb-4" className="error-message">
-              <p>{error}</p>
-            </div>}
+export function middleware(request: NextRequest) {
+  // Create a new instance of Headers to modify the request's headers
+  const requestHeaders = new Headers(request.headers);
+  const url = new URL(request.url);
 
-            <div className="mb-10">
-              <label htmlFor="username" className="login-main-label-custom">{t('email')}</label>
-              <input
-                type="email"
-                id="username"
-                name="username"
-                className="log-main-input-cust log-main-input-border text-md"
-                aria-label="E-mail address"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                aria-label="E-mail address"
-              />
-            </div>
+  // Extract the second segment of the URL path, which corresponds to the locale
+  const pathSegments = url.pathname.split('/').filter(Boolean);
 
-            <div className="mb-6 relative">
-              <label htmlFor="password" className="login-main-label-custom">{t('password')}</label>
-              <input
-                type={isPasswordVisible ? 'text' : 'password'}  // Toggle between text and password types
-                id="password"
-                name="password"
-                className="log-main-input-cust log-main-input-border"
-                aria-label="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                aria-label="Password"
-              />
-              <span
-                className="absolute right-3 top-3 cursor-pointer"
-                onClick={togglePasswordVisibility}
-              >
-                {isPasswordVisible ? (
-                  <i className="fa-regular fa-eye-slash"></i>
-                ) : (
-                  <i className="fa-regular fa-eye"></i>
-                )}
-              </span>
-            </div>
+  // Check if a second path segment exists (which would be the locale, e.g., '/en')
+  const locale = pathSegments[1] || null;
 
-            <div className="mb-14 login-main-common-custom">
-              <label className="flex text-gray-700">
-                <input type="checkbox" name="remember" />
-                <span className="login-main-remember-span-custom">{t('rmemberme')}</span>
-              </label>
+  // Extract valid locales from constants
+  const availableLocales = languages.map(lang => lang.value);
 
-              <Link href={`/${countrycode}/${locale}/forgot-password`} className="login-main-forgot-custom">
-                {t('forgotpassword')}
-              </Link>
-            </div>
+  // If no locale is found or the locale is not in the valid list, trigger a 404
+  if (!locale || !availableLocales.includes(locale)) {
+    notFound(); // Trigger 404 if the locale is invalid or missing
+  }
 
-            <div className="flex items-center justify-center">
-              <button type="submit" className="login-main-redbtn-custom">{t('submitbtntext')}</button>
-            </div>
-          </form>
+  // Set the 'locale' header if it's valid
+  requestHeaders.set('locale', locale);
 
-          <div className="flex items-center justify-center mt-10">
-            <Dropdown pagename="login" />
-          </div>
-        </div>
-      </main>
-    </>
-  );
+  // Create a response and pass the modified headers
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+
+  return response;
 }
-
-export default LoginForm;
